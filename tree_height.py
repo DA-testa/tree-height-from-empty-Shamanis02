@@ -22,7 +22,11 @@ def compute_height(n, parents):
     return get_height(root)
 
 def main():
-    n = int(input())
+    try:
+        n = int(input())
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+        return
     parents = list(map(int, input().split()))
     print(compute_height(n, parents))
 
