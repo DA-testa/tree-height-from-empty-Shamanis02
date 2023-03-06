@@ -38,6 +38,7 @@ def main():
                 n = int(f.readline())
                 parents = list(map(int, f.readline().split()))
                 print(compute_height(n, parents))
+    pass
 
 if __name__ == '__main__':
     sys.setrecursionlimit(10**7)
