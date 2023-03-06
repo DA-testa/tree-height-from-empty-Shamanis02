@@ -1,3 +1,7 @@
+import sys
+import numpy 
+import threading
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -36,4 +40,9 @@ def main():
                 print(compute_height(n, parents))
 
 if __name__ == '__main__':
+    sys.setrecursionlimit(10**7)
+    threading.stack_size(2**27)
+    threading.Thread(target=main).start()
     main()
+    
+
