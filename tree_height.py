@@ -22,13 +22,18 @@ def compute_height(n, parents):
     return get_height(root)
 
 def main():
-    try:
+    openfile = input()
+    if "I" in openfile or "i" in openfile:
         n = int(input())
-    except ValueError:
-        print("Invalid input. Please enter a valid integer.")
-        return
-    parents = list(map(int, input().split()))
-    print(compute_height(n, parents))
+        parents = list(map(int, input().split()))
+        print(compute_height(n, parents))
+    elif "F" in openfile or "f" in openfile:
+        file=input()
+        if "a" not in file:
+            with open("test/" + file, 'r')as f:
+                n = int(f.readline())
+                parents = list(map(int, f.readline().split()))
+                print(compute_height(n, parents))
 
 if __name__ == '__main__':
     main()
